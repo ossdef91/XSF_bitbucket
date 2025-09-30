@@ -10,7 +10,7 @@
  * data and return the result page.
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.util.logging.Logger;
 
@@ -29,8 +29,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 
-public class FileSysResource {
-    private static final Logger logger = Logger.getLogger(FileSysResource.class.getName());
+public class BitBucketResource {
+    private static final Logger logger = Logger.getLogger(BitBucketResource.class.getName());
 
     private static final String ACTION = "Action";
     private static final String ERROR = "Error";
@@ -62,8 +62,8 @@ public class FileSysResource {
 
         logger.info("exposedPath: "+exposedPath);
         ServletContext context = request.getServletContext();
-        FileSysConnectorConfig config = 
-            FileSysConnectorConfig.fromContext(request.getServletContext());
+        BitBucketConnectorConfig config = 
+            BitBucketConnectorConfig.fromContext(request.getServletContext());
 
         String msg="";
         String displayAction = "";

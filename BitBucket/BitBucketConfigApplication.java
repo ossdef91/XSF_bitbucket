@@ -8,21 +8,21 @@
  * This particular application implements the services
  * for the configuration web app.
  */
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.ws.rs.core.Application;
 
-public class FileSysConfigApplication extends Application {
+public class BitBucketConfigApplication extends Application {
     /*
      * This identifies the classes that implement services for this Application.
      */
     @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> s = new HashSet<Class<?>>();
-        s.add(FileSysResource.class);
+        s.add(BitBucketResource.class);
         return s;
     }
 }

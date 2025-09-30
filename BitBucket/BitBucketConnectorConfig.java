@@ -9,7 +9,7 @@
  * for each configuration value.
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,9 +42,9 @@ import com.dassaultsystemes.xsoftware.scmdaemon.sdk.interfaces.AutoReleasable;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlType(propOrder = { "exposedPath" })
-public class FileSysConnectorConfig {
+public class BitBucketConnectorConfig {
 
-    private static final Logger logger = Logger.getLogger(FileSysConnectorConfig.class.getName());
+    private static final Logger logger = Logger.getLogger(BitBucketConnectorConfig.class.getName());
     private ServletContext context;
 
     private String exposedPath = "";
@@ -61,17 +61,17 @@ public class FileSysConnectorConfig {
     // This is used to implement locking of the configuration file.
     private ReentrantReadWriteLock cfgLock = new ReentrantReadWriteLock();
 
-    public FileSysConnectorConfig() {
+    public BitBucketConnectorConfig() {
         // Empty constructors are used for JAX-RS. Do not remove them.
     }
 
-    public FileSysConnectorConfig(ServletContext context) {
+    public BitBucketConnectorConfig(ServletContext context) {
         this.context = context;
     }
 
-    public static FileSysConnectorConfig fromContext(ServletContext context) {
+    public static BitBucketConnectorConfig fromContext(ServletContext context) {
         return ConnectorUtils.singletonFromContext(context, 
-            FileSysConnectorConfig.class, () -> new FileSysConnectorConfig(context));
+            BitBucketConnectorConfig.class, () -> new BitBucketConnectorConfig(context));
     }
 
     public ServletContext getServletContext() {
@@ -170,14 +170,14 @@ public class FileSysConnectorConfig {
                 logger.fine("reading start {");
                 logger.fine("reading from configFile: " + configFile);
 
-                JAXBContext jaxbContext = JAXBContext.newInstance(FileSysConnectorConfig.class);
+                JAXBContext jaxbContext = JAXBContext.newInstance(BitBucketConnectorConfig.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
                 
                 // ConnectorConfig is intended to be a singleton, but the
                 // cast below calls the constructor, and so we need to make sure
                 // to reset each variable here.
-                FileSysConnectorConfig data = 
-                        (FileSysConnectorConfig) jaxbUnmarshaller.unmarshal(file);
+                BitBucketConnectorConfig data = 
+                        (BitBucketConnectorConfig) jaxbUnmarshaller.unmarshal(file);
                 exposedPath = data.exposedPath;
 
                 logger.fine("exposedPath: "+exposedPath);
@@ -202,7 +202,7 @@ public class FileSysConnectorConfig {
             return;
         logger.fine("configFile: " + getConfigFile());
         
-        JAXBContext jaxbContext = JAXBContext.newInstance(FileSysConnectorConfig.class);
+        JAXBContext jaxbContext = JAXBContext.newInstance(BitBucketConnectorConfig.class);
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
         // Output is pretty printed
@@ -247,7 +247,7 @@ public class FileSysConnectorConfig {
         // Configuration file is within the server base directory.
         String serverBaseDir = System.getProperty("catalina.base");
         String configFile = 
-            Paths.get(serverBaseDir, "WEB-INF", "3DSCM", "filesys_connector.xml")
+            Paths.get(serverBaseDir, "WEB-INF", "3DSCM", "bitbucket_connector.xml")
                   .toString();
         return configFile;
     }

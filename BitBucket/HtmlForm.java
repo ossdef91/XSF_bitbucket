@@ -8,7 +8,7 @@
  * been performed.
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +20,7 @@ import com.dassaultsystemes.xsoftware.scmdaemon.sdk.interfaces.AutoReleasable;
 public class HtmlForm {
 
     
-    private static final String CSSFILE = "scmfilesys.css";
+    private static final String CSSFILE = "scmbitbucket.css";
     private static final String CONNECTORCONFIG = "ConnectorConfig";
     private static final String POST = "post";
     private static final String SUBMIT = "submit";
@@ -29,8 +29,8 @@ public class HtmlForm {
     private static final String BUTTON = "button";
 
     public static final String REQUIREJS = "/webapps/VENrequirejs/js/require.js";
-    public static final String JSMODULE = "DS/scmfilesys/scmfilesys";
-    public static final String WEBAPPS_SCMFILESYS = "/webapps/scmfilesys"; 
+    public static final String JSMODULE = "DS/scmbitbucket/scmbitbucket";
+    public static final String WEBAPPS_SCMBITBUCKET = "/webapps/scmbitbucket"; 
     public static final String WEBAPPS_SCMDAEMON_INDEX_JSP = "/webapps/scmdaemon/index.jsp";
 
     /*
@@ -40,11 +40,11 @@ public class HtmlForm {
         String html;
         String newLine = "<br>";
         
-        Html Htm = new Html(context.getContextPath(), WEBAPPS_SCMFILESYS);
+        Html Htm = new Html(context.getContextPath(), WEBAPPS_SCMBITBUCKET);
         
         // Run this before generating any html, to have clear error results
         // if the command throws
-        FileSysConnectorConfig config = FileSysConnectorConfig.fromContext(context);
+        BitBucketConnectorConfig config = BitBucketConnectorConfig.fromContext(context);
         try (AutoReleasable lock = config.readLock()) {
 
             html = Htm.pageStart( "" );
@@ -58,7 +58,7 @@ public class HtmlForm {
             // Connector configuration
             html += Htm.dialogSeparator(Utils.getStr(CONNECTORCONFIG));
             html += Htm.formStart(CONNECTORCONFIG, POST, SUBMIT, 
-                    "return scmfilesys.Validate2(this)");
+                    "return scmbitbucket.Validate2(this)");
             html += Htm.hiddenInput(ACTION,  CONNECTORCONFIG);
             html += Htm.tableStartLeft(true, false, "");
             html += Htm.inputField(TEXT, Utils.getStr("ExposedPath"), 
@@ -84,7 +84,7 @@ public class HtmlForm {
      */
     static private String connectorControlBar(ServletContext context, Html html) {
         
-        Html Htm = new Html(context.getContextPath(), WEBAPPS_SCMFILESYS);
+        Html Htm = new Html(context.getContextPath(), WEBAPPS_SCMBITBUCKET);
 
         List<String> myButtons = Arrays.asList(
             Htm.myButton(SUBMIT, "", Utils.getStr("Apply")),
@@ -92,7 +92,7 @@ public class HtmlForm {
                     Utils.getStr("Reset")),
             Htm.myButton(BUTTON, 
                     String.format("window.open(\"%s\")", 
-                    html.resourcePath("assets/doc/FileSysConnector.htm")), 
+                    html.resourcePath("assets/doc/BitBucketConnector.htm")), 
                     Utils.getStr("Help")));
         return Htm.controlBar(2, myButtons);
     }
@@ -106,7 +106,7 @@ public class HtmlForm {
      * @param e The thrown error. Message is reported.
      */
     public static String formatResultOnThrow(ServletContext context, String action, Throwable e) {
-        Html html = new Html(context.getContextPath(), HtmlForm.WEBAPPS_SCMFILESYS);
+        Html html = new Html(context.getContextPath(), HtmlForm.WEBAPPS_SCMBITBUCKET);
         String result = html.resultHeader(false);
         result += "<TR>\n";
         result += "<TH>" + Utils.getStr("Action") + "</TH>";
@@ -129,7 +129,7 @@ public class HtmlForm {
      */
     public static String formatResult (ServletContext context, boolean success, 
                 String[] msgs, String destination) {
-        Html html = new Html(context.getContextPath(), HtmlForm.WEBAPPS_SCMFILESYS);
+        Html html = new Html(context.getContextPath(), HtmlForm.WEBAPPS_SCMBITBUCKET);
         String result = html.resultHeader(success);
         for(int i = 0; i < msgs.length; ++i) {
             String title = msgs[i];

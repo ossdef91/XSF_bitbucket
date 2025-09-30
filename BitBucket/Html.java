@@ -9,7 +9,7 @@
  *
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.nio.file.Paths;
 import java.util.Arrays;
