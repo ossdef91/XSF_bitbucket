@@ -11,7 +11,7 @@
  * For greater control, the higher level methods
  * in the parent class can be overridden.
  */
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.io.IOException;
 import java.io.InputStream;

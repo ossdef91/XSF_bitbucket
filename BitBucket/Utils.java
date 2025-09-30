@@ -7,14 +7,14 @@
  * This file implements utility routines
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 import com.dassaultsystemes.xsoftware.scmdaemon.sdk.StringManager;
 
 public class Utils {
 
     // This is the name of our resource bundle.
     private static final String resourceBundle = 
-        "com.dassaultsystemes.xsoftware.scmdaemon.filesys.resources.filesys";
+        "com.dassaultsystemes.xsoftware.scmdaemon.bitbucket.resources.bitbucket";
 
     /*
      * This gets a formated string from our resource bundle.

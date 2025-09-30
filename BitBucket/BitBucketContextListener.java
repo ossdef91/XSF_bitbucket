@@ -11,7 +11,7 @@
  * craeting a "Connector" (Repository) in 3DExperience.
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.util.logging.Logger;
 
@@ -24,34 +24,34 @@ import com.dassaultsystemes.xsoftware.scmdaemon.sdk.ConnectorDescriptor;
 import com.dassaultsystemes.xsoftware.scmdaemon.sdk.ConnectorUtils;
 
 @WebListener
-public class FileSysContextListener implements ServletContextListener {
-    private static final Logger logger = Logger.getLogger(FileSysContextListener.class.getName());
+public class BitBucketContextListener implements ServletContextListener {
+    private static final Logger logger = Logger.getLogger(BitBucketContextListener.class.getName());
 
     // The parameter in the web.xml file that identifies our services path,
-    // which will be /resource/v1/modeler/FileSys
-    public static final String PARAM_SERVICE_PATH = "SCMFileSysServicePath"; 
+    // which will be /resource/v1/modeler/BitBucket
+    public static final String PARAM_SERVICE_PATH = "SCMBitBucketServicePath"; 
     // The parameter in the web.xml file that identifies our configuration page
     // url. webapps/scmdesignsync/config/start
-    public static final String PARAM_CONFIG_PATH = "SCMFileSysConfigPath"; 
+    public static final String PARAM_CONFIG_PATH = "SCMBitBucketConfigPath"; 
     // The parameter in the web.xml file that identifies a glob match for
     // paths our UI uses. These are the paths that will be authenticated.
-    public static final String PARAM_CONFIG_AUTH_PATH_MATCH = "SCMFileSysConfigAuthPathMatch";
+    public static final String PARAM_CONFIG_AUTH_PATH_MATCH = "SCMBitBucketConfigAuthPathMatch";
     // This is the Type displayed when creating a Connector. This MUST
     // currently match the leaf of the SERVICE_PATH
-    public static final String SCMNAME = "FileSys";
+    public static final String SCMNAME = "BitBucket";
     // This is a key used for storing the information for this connector.
-    public static final String SCMTYPE = "scmfilesys";
+    public static final String SCMTYPE = "scmbitbucket";
 
     // This is the class that implements our service methods.
     public static final Class<?> SERVICE_IMPL_CLASS = 
-            com.dassaultsystemes.xsoftware.scmdaemon.filesys.V1SCMServices.class;
+            com.dassaultsystemes.xsoftware.scmdaemon.bitbucket.V1SCMServices.class;
 
     @Override
     public void contextDestroyed(ServletContextEvent arg0) {}
 
     @Override
     public void contextInitialized(ServletContextEvent event) {
-        logger.fine("FileSys connector starting");
+        logger.fine("BitBucket connector starting");
 
         ServletContext context = event.getServletContext();
 
@@ -64,12 +64,12 @@ public class FileSysContextListener implements ServletContextListener {
         // This should never happen in practice, butis used by Dassault Systems
         // for test purposes.
         if (servicePath==null || configPath==null) {
-            configPath = "webapps/scmfilesys/config/start";
-            servicePath = "/resources/v1/modeler/FileSys";
+            configPath = "webapps/scmbitbucket/config/start";
+            servicePath = "/resources/v1/modeler/BitBucket";
         }
 
-        logger.fine("filesys resourcePath: " + servicePath);
-        logger.fine("filesys configPath: " + configPath);
+        logger.fine("bitbucket resourcePath: " + servicePath);
+        logger.fine("bitbucket configPath: " + configPath);
 
         ConnectorDescriptor descriptor = ConnectorDescriptor.create();
         descriptor.setScmType(SCMTYPE)
@@ -81,7 +81,7 @@ public class FileSysContextListener implements ServletContextListener {
         ConnectorUtils.registerConnector(context, descriptor);
 
 
-        FileSysConnectorConfig configData = FileSysConnectorConfig.fromContext(context);
+        BitBucketConnectorConfig configData = BitBucketConnectorConfig.fromContext(context);
 
         String errMsg = configData.readConfiguration();
         if (errMsg != null) {
@@ -90,7 +90,7 @@ public class FileSysContextListener implements ServletContextListener {
             return;
         }
 
-        System.out.println("FileSys connector started");
+        System.out.println("BitBucket connector started");
         
     }
 }

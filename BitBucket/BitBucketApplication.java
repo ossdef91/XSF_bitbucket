@@ -8,7 +8,7 @@
  * This particular application implements the main REST services
  * for the connector.
  */
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +17,7 @@ import jakarta.ws.rs.core.Application;
 
 import com.dassaultsystemes.xsoftware.scmdaemon.sdk.ConnectorUtils;
 
-public class FileSysApplication extends Application {
+public class BitBucketApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> s = new HashSet<Class<?>>();

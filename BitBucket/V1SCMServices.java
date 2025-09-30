@@ -9,7 +9,7 @@
  * definition of the set of supported "capabilities".
  */
 
-package com.dassaultsystemes.xsoftware.scmdaemon.filesys;
+package com.dassaultsystemes.xsoftware.scmdaemon.bitbucket;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -266,8 +266,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
         // Get the configuration data, which gives us our path prefix.
-        FileSysConnectorConfig config = 
-                FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config = 
+                BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             Path fullPath = null;
@@ -410,8 +410,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             String version = serviceCall.getPathElem(VERSION);
@@ -508,8 +508,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
         String fileId = serviceCall.getParam(FILE);
         boolean isDownload = serviceCall.getParamBool(DOWNLOAD);
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
 
@@ -567,8 +567,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
         if (name.isEmpty() || "/".equals(name)) name = "content";
         String format = serviceCall.getParam(FORMAT, FORMAT_ZIP);
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
 
@@ -727,8 +727,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
         
-        FileSysConnectorConfig config = 
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config = 
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // This is the repository path
@@ -774,8 +774,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
         
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // This is the root path we will look at.
@@ -842,8 +842,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         /* Sample implementation code
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the service call.
@@ -903,8 +903,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         /* Sample implementation code
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the parameters.
@@ -960,8 +960,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         /* Sample implementation code
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the parameters.
@@ -1034,8 +1034,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         /* Sample implementation code 
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the service call
@@ -1134,8 +1134,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         /* Sample implementation code
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the parameters.
@@ -1226,8 +1226,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
-        //FileSysConnectorConfig config =
-        //    FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        //BitBucketConnectorConfig config =
+        //    BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the parameters.
@@ -1302,8 +1302,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // Extract the data from the parameters.
@@ -1377,8 +1377,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
-        //FileSysConnectorConfig config =
-        //    FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        //BitBucketConnectorConfig config =
+        //    BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // This is how to get the version. Not used at present.
@@ -1449,8 +1449,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
-        //FileSysConnectorConfig config =
-        //    FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        //BitBucketConnectorConfig config =
+        //    BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // This is how to get the version. Not used at present.
@@ -1501,8 +1501,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
 
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
-        //FileSysConnectorConfig config =
-        //    FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        //BitBucketConnectorConfig config =
+        //    BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             // We are not using the version at present, but here is how to get it.
@@ -1570,8 +1570,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
         logger.fine(STR_SERVICE_CALL+serviceCall);
 
             
-        FileSysConnectorConfig config =
-            FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        BitBucketConnectorConfig config =
+            BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         try {
             String version = serviceCall.getPathElem(VERSION);
@@ -1637,8 +1637,8 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
         // String mask = serviceCall.getParam(MASK);
 
         // Read the configuration information.
-        //FileSysConnectorConfig config =
-        //    FileSysConnectorConfig.fromContext(serviceCall.getServletContext());
+        //BitBucketConnectorConfig config =
+        //    BitBucketConnectorConfig.fromContext(serviceCall.getServletContext());
 
         // We build up an array of the results.
         JsonArrayBuilder members = Json.createArrayBuilder();
@@ -1784,7 +1784,7 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
      * @param serviceCall The Service Call details.
      * @return
      */
-    private static Path getFullRepositoryPath(FileSysConnectorConfig config, ServiceCall serviceCall) 
+    private static Path getFullRepositoryPath(BitBucketConnectorConfig config, ServiceCall serviceCall) 
     throws SCMException {
         return buildFullPath(config, Paths.get(serviceCall.getResolvedAddress()));
     }
@@ -1798,7 +1798,7 @@ public class V1SCMServices extends V1SCMServicesBase implements ConnectorConstan
      * @param address Path to add to the configuration prefix
      * @return
      */
-    private static Path buildFullPath(FileSysConnectorConfig config, Path address) 
+    private static Path buildFullPath(BitBucketConnectorConfig config, Path address) 
         throws SCMException {
         String pathPrefix = config.getExposedPath();
         Path res = Paths.get(pathPrefix, address.toString()).normalize();
