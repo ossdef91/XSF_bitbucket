@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC 
+"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+"http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="scmfilesys">
+    <context-param>
+        <param-name>SCMFileSysServicePath</param-name>
+        <param-value>/resources/v1/modeler/FileSys</param-value>
+    </context-param>
+    <context-param>
+        <param-name>SCMFileSysConfigPath</param-name>
+        <param-value>/webapps/scmfilesys/config/start</param-value>
+    </context-param>
+    <context-param>
+        <param-name>SCMFileSysConfigAuthPathMatch</param-name>
+        <param-value>/webapps/scmfilesys/config/*</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>com.dassaultsystemes.xsoftware.scmdaemon.filesys.FileSysConfigApplication</servlet-name>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>com.dassaultsystemes.xsoftware.scmdaemon.filesys.FileSysConfigApplication</servlet-name>
+        <url-pattern>/webapps/scmfilesys/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>com.dassaultsystemes.xsoftware.scmdaemon.filesys.FileSysApplication</servlet-name>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>com.dassaultsystemes.xsoftware.scmdaemon.filesys.FileSysApplication</servlet-name>
+        <url-pattern>/resources/v1/modeler/FileSys/*</url-pattern>
+    </servlet-mapping>
+</web-app>

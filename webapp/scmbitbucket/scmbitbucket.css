@@ -1,0 +1,298 @@
+/*
+*
+* ***********************************************************
+* (c) Dassault Systemes, 1993 - 2017.  All rights reserved.
+* ***********************************************************
+*
+* This is a sample css file. It is included by the page generated
+* by the JSP code.  
+*
+*/
+
+
+/* Default settings for all content panels */
+BODY  {
+    background-color: #F7F7F7; color: #000;
+    font-family: Verdana,Arial,sans-serif;
+    padding-right: 30px;
+    /* enovia-font-family: Arial,Helvetica,sans-serif; */
+}
+
+/* Page titles */
+.PAGETITLE  {
+    color: #757575;
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+.PAGESUBTITLE  {
+    color: inherit;
+    font-weight: normal;
+    font-size: 0.85em;
+}
+
+/* Page titles when making irreversible changes (e.g., deleting data) */
+.PAGEWARNTITLE  {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+/* Title bars, similar to PAGETITLE, but less important, with no background color */
+.TITLEBAR    {
+    background-color: #F7F7F7;
+    color: #386890;
+    font-weight: normal;
+    font-size: 1.7em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+/* Title bars, similar to PAGETITLE, but less important, with no background color */
+.TITLEBARCTR    {
+    background-color: #F7F7F7;
+    color: #386890;
+    font-weight: normal;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+/* Superscript characters in PAGETITLE (e.g., the trademark symbol) */
+.PAGETITLE SUP  { font-size: smaller; font-weight: normal; }
+
+/* Section headers (DataSheet) */
+H2.section-header {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #4E4E4E;
+}
+H3.section-header {
+    font-size: 1em;
+    font-weight: 600;
+    color: #4E4E4E;
+}
+
+a:link {
+    text-decoration: none;
+    color: blue;
+}
+
+/* action buttons */
+input[type="RESET"],
+input[type="SUBMIT"],
+input[type="BUTTON"] {
+    cursor: pointer;
+    background-color: #F5F6F7;
+    color: #646668;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.0em;
+	font-weight: normal;
+	padding: 1px 8px;
+    border: 1px solid #A2A5A9;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+/* onmouseover */
+input[type="RESET"]:hover,
+input[type="SUBMIT"]:hover,
+input[type="BUTTON"]:hover {
+    color: #595959;
+    border-color: #D8D8D8;
+	border-right-color: #666;
+    border-bottom-color: #666;
+}
+
+/* Submit button has a distinctive border */
+input[type="SUBMIT"] {
+    border-color: #4682B4;
+}
+
+/* onmousedown */
+input[type="RESET"]:active,
+input[type="BUTTON"]:active,
+input[type="SUBMIT"]:active {
+    color: #444444;
+    background-color: #A4BFDB;
+    border-color: #D8D8D8;
+	border-left-color: #666;
+    border-top-color: #666;
+}
+
+/* disabled */
+input[type="RESET"]:disabled,
+input[type="BUTTON"]:disabled,
+input[type="SUBMIT"]:disabled {
+    color: #717375;
+    background-color: #ECECEC;
+    border-color: #bfbfbf;
+    cursor: auto;
+}
+
+/*
+ Buttons on the form (as opposed to those on control bar)
+ should look less prominent. This includes Browse Server,
+ item Help, buttons associated with individual inputs
+ and any other button we consider a minor actor.
+*/
+input[type="SUBMIT"].BTN-MINOR,
+input[type="BUTTON"].BTN-MINOR,
+input[type="BUTTON"].BTN-BROWSE,
+input[type="BUTTON"].BTN-ELEM-HELP {
+    padding: 1px 6px;
+    font-size: 0.8em;
+}
+
+input[type="TEXT"].WIDE { 
+	width: 100%;
+}
+
+/*
+ File upload buttons could be stylized, but they respond
+ differently because of the implicit hidden pathname field.
+*/
+input[type="FILE"].BTN-FILE {
+}
+
+/* Tables that run left to right across the page, with heads on the left */
+.LEFTHEADERTBL TH          { background-color: #ECECEC; font-size:0.9em; text-align:left; vertical-align:top; }
+.LEFTHEADERTBL TD          { background-color: #FFFFFF; text-align: left; vertical-align: top; }
+.LEFTHEADERTBL .TDREADONLY {background-color: #ECECEC; text-align: left; vertical-align: top;}
+.LEFTHEADERTBL .PROMPT     { background-color: #ECECEC; font-size: 0.8em; text-align: left; }
+.LEFTHEADERTBL .THEADER    { background-color: #ECECEC; font-size: 0.8em; text-align: center; }
+.LEFTHEADERTBL .SEPARATOR  { background-color: #CDCDCD; font-size: 0.8em; text-align: left; font-weight: bolder;}
+.LEFTHEADERTBL .DIALOGSEPARATOR  { font-size: 0.9em; text-align: center; }
+.LEFTHEADERTBL .CONTROLS   { background-color: #ECECEC; text-align: right; }
+.LEFTHEADERTBL .DATA       { background-color: #FFFFFF; text-align: left; }
+.LEFTHEADERTBL .SDATA      { background-color: #FFFFFF; font-size: 0.8em; text-align: center; }
+.LEFTHEADERTBL .SMALLTEXT  { font-size: 0.7em; }
+.LEFTHEADERTBL .EXTERNAL   { background-color: #FFCCCC  }
+.LEFTHEADERTBL .INTERNAL   { background-color: #ECECEC; }
+.LEFTHEADERTBL .XSEPARATOR { background-color: #DDCCCC; color: #000000; font-size: 0.8em; text-align: center; }
+.LEFTHEADERTBL .DATAMATCH     {background-color: white; }
+.LEFTHEADERTBL .DATAMISMATCH  {background-color: pink; }
+.LEFTHEADERTBL .DATAEMPTY     {background-color: gray; }
+.LEFTHEADERTBL .READONLY      {border: none; background-color: transparent; }
+
+/* Tables that runs top-down, with heads at the top */
+.TOPHEADERTBL TH         { background-color: #ECECEC; text-align: center; vertical-align: bottom; }
+.TOPHEADERTBL TD         { background-color: #FFFFFF; text-align: left; vertical-align: top; }
+.TOPHEADERTBL .TOPHEADER { background-color: #ECECEC; text-align: center; vertical-align: top; }
+.TOPHEADERTBL .THEADER   { background-color: #ECECEC; font-size: 0.8em; text-align: center; }
+.TOPHEADERTBL .SDATA     { background-color: #FFFFFF; font-size: 0.8em; text-align: center; }
+.TOPHEADERTBL .SEPARATOR { background-color: #B6C4D0; font-size: 0.8em; text-align: center; }
+.TOPHEADERTBL .CONTROLS  { background-color: #ECECEC; text-align: right; }
+.TOPHEADERTBL .SMALLTEXT { font-size: 0.7em; }
+.TOPHEADERTBL .REDCELL   { background-color: #FF6699; }
+.TOPHEADERTBL .SREDCELL    { background-color: #FF6699; font-size: 0.8em; }
+.TOPHEADERTBL .YELLOWCELL  { background-color: #FFFF66; }
+.TOPHEADERTBL .CYELLOWCELL { background-color: #FFFF66; text-align: center; }
+.TOPHEADERTBL .CDATA       { text-align: center; }
+
+/* Tables with heads on the left side and at the top  */
+.COMBOTBL .THEADER    { background-color: #ECECEC; font-size: 0.8em; text-align: center; }
+.COMBOTBL .PROMPT     { background-color: #ECECEC; font-size: 0.8em; text-align: left; }
+.COMBOTBL .STATICDATA { background-color: lightgrey; text-align: left; }
+.COMBOTBL .CHANGEDATA { background-color: white; text-align: left; }
+.COMBOTBL .SEPARATOR  { background-color: #B6C4D0; font-size: 0.8em; text-align: center; }
+.COMBOTBL .CONTROLS   { background-color: #B6C4D0; text-align: right; }
+
+/* Tables that display help information on the current panel or operation */
+.INFOTBL TH { background-color: #CCDDD0; }
+.INFOTBL TD { background-color: #FFFFFF; }
+.INFOTBL .CONTROLS  { background-color: #B6C4D0; text-align: right; }
+.INFOTBL .SEPARATOR { background-color: #B6C4D0; font-size: 0.8em; text-align: center; }
+
+/* Tables that display summary information on a selected item */
+.REPORT {vertical-align: top; }
+.REPORT  TH  { background-color: #ECECEC; vertical-align:top; }
+.REPORT  TD  { background-color: #FFFFFF; text-align: left; vertical-align: top; }
+.REPORT .SDATA  { background-color: #FFFFFF; text-align: center; }
+.REPORT .THEADER    { background-color: #B6C4D0; text-align: center; }
+.REPORT .CHEADER    { background-color: #B6C4D0; text-align: center; vertical-align: middle; }
+.REPORT .SHEADER    { background-color: #ECECEC; text-align: left; }
+.REPORT .PROMPT     { background-color: #ECECEC; text-align: right; }
+.REPORT .SEPARATOR  { background-color: #ECECEC; text-align: center; }
+.REPORT .CONTROLS   { background-color: #DDDDDD; text-align: center; }
+.REPORT .CSVCONTROLS { background-color: #B6C4D0; text-align: right; }
+.REPORT .MORENOTES   { background-color: #B6C4D0; text-align: left; }
+
+/* Tables that display summary information (level info pages) */
+.LEVELREPORT  TH  { background-color: #ECECEC; vertical-align: top; text-align: left; }
+.LEVELREPORT  TD  { background-color: #FFFFFF; vertical-align:top; }
+.LEVELREPORT .SDATA  { background-color: #FFFFFF; font-size: 0.8em; text-align: center; vertical-align:top; }
+.LEVELREPORT .THEADER    { background-color: #B6C4D0; font-size: 0.8em; text-align: left; text-transform: uppercase; }
+.LEVELREPORT .RHEADER    { background-color: #B6C4D0; font-size: 0.8em; text-align: right; }
+.LEVELREPORT .SHEADER    { background-color: #ECECEC; font-size: 0.8em; text-align: left; }
+.LEVELREPORT .PROMPT     { background-color: #ECECEC; font-size: 0.8em; text-align: right; }
+.LEVELREPORT .SEPARATOR  { background-color: #ECECEC; font-size: 0.8em; text-align: center; }
+.LEVELREPORT .CONTROLS   { background-color: #DDDDDD; text-align: center; }
+.LEVELREPORT .CSVCONTROLS  { background-color: #B6C4D0; text-align: right; }
+.LEVELREPORT .MORENOTES    { background-color: #B6C4D0; text-align: left; }
+.LEVELREPORT .ABOUTHEADER  { background-color: #B6C4D0; font-size: 0.8em; color: #000; text-align: left; text-transform: uppercase; }
+.LEVELREPORT .MOTDHEADER   { background-color: #B6C4D0; font-size: 0.8em; color: #000; text-align: left; text-transform: uppercase; }
+.LEVELREPORT .FOOTER1      { background-color: #FFFFFF; text-align: left; font-size:0.8em; font-weight: bold; }
+.LEVELREPORT .FOOTER2      { background-color: #DDDDDD; text-align: left; font-size:0.8em; font-weight: bold; }
+.LEVELREPORT .SMALLTEXT    { font-size: 0.7em; }
+
+TD.CSVCONTROLS  { text-align: right; }
+
+.CURRLEVEL  { color: green; }
+.KEYWORDFOUND { color: green; }
+.DELETEDOBJ { color: red; }
+.CHECKBOXCMD { color: red; font-size: 0.8em; font-weight: bold; }
+.REQUIRED  { color: red; }
+.TERM      { font-style:italic; }
+
+
+/* Tables that display the results of the last action */
+.RESULT  TH  { background-color: #ECECEC; text-align: left; }
+.RESULT  TD  { background-color: #FFFFFF; text-align: left; }
+.RESULT .THEADER    { background-color: #ECECEC; font-size: 0.8em; text-align: center; text-transform: uppercase; }
+.RESULT .PROMPT     { background-color: #ECECEC; font-size: 0.8em; text-align: right; }
+.RESULT .SEPARATOR  { background-color: #ECECEC; font-size: 0.8em; text-align: center; }
+.RESULT .CONTROLS   { background-color: #B6C4D0; text-align: center; }
+
+.RESULT .WARNHEADER  { background-color: yellow; }
+.RESULT .WARNDATA    { background-color: beige; }
+.RESULT .ERRHEADER   { background-color: red; }
+.RESULT .ERRDATA     { background-color: salmon; }
+
+/* A RESULT table specific to error conditions */
+.WARNRESULT .THEADER { background-color: #ECECEC; text-align: left; }
+.WARNRESULT .TDATA   { background-color: #FFFFFF; text-align: left; }
+.WARNRESULT  TH  { background-color: orange; text-align: left; }
+.WARNRESULT  TD  { background-color: yellow;  text-align: left; }
+
+.ERRESULT .THEADER { background-color: #ECECEC; text-align: left; }
+.ERRESULT .TDATA   { background-color: #FFFFFF; text-align: left; }
+.ERRESULT  TH  { background-color: orange; text-align: left; }1G
+.ERRESULT  TD  { background-color: red;  text-align: left; }
+
+/* Tables used for formatting embedded text */
+.NESTEDTBL TD  { background-color: lightgrey; text-align: center; }
+.NESTEDTBL .REVISION { background-color: pink}
+
+/* *****************************************************************************
+** These classes describe TH and TD elements used in tables
+** *****************************************************************************
+** .SEPARATOR - a horizontal bar that divides a form
+** .CONTROLS - a horizontal bar that usually holds buttons
+** .THEADER - a label that is aligned in the center (usually in the row)
+** .PROMPT - a label that is right-justified (usually in the column)
+** .SDATA - a table cell where data is center-aligned
+** .STATICDATA - a non-editable field - the value cannot be changed by the user
+** .CHANGEDATA - an editable field - the value can be changed by the user
+** .DATAMATCH - a match, when comparing two or more values
+** .DATAMISMATCH - a mis-match, when comparing two or more values
+** .DATAEMPTY - an empty field, when comparing two or more values
+********************************************************************************
+*/
+
+.floatingMessage  { text-align: center; color: red; padding: 10px; }
+
