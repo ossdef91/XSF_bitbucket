@@ -2,16 +2,16 @@
 ///////////////////////////////////////////////////////////////////////////////
 // (c) Dassault Systemes, 1993 - 2017.  All rights reserved.
 //
-// This file contains helper JavaScript functions used by the FileSys Connector
+// This file contains helper JavaScript functions used by the BitBucket Connector
 // Configuration panel.
 // These functions may not currently be used. This is provided as an example
 // of how JS functions can be defined to be called from the page that is
 // generated through the JSP code on the server.
 //
 ///////////////////////////////////////////////////////////////////////////////
-define('DS/scmfilesys/scmfilesys', [], function() {
+define('DS/scmbitbucket/scmbitbucket', [], function() {
 	'use strict';
-	var scmfilesys = {
+	var scmbitbucket = {
 		/*** Trim leading and trailing spaces from a string.
 		 *
 		 * @param {string} str The string to trim
@@ -60,7 +60,7 @@ define('DS/scmfilesys/scmfilesys', [], function() {
 		}
 		
 	}
-	window.scmfilesys = scmfilesys;
-	return scmfilesys;
+	window.scmbitbucket = scmbitbucket;
+	return scmbitbucket;
 });
 
